@@ -10,4 +10,10 @@ public class QueryFormatterTest {
         String formatted = QueryFormatter.format("Something");
         assertEquals("something", formatted);
     }
+
+    @Test
+    public void should_escape_dash() {
+        String formatted = QueryFormatter.format("some-thing");
+        assertEquals("some\\-thing", formatted);
+    }
 }

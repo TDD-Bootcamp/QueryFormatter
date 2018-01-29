@@ -2,6 +2,6 @@ package tdd.course;
 
 public class QueryFormatter {
     public static String format(String value) {
-        return value.toLowerCase();
+        return value.toLowerCase().replace("-", "\\-");
     }
 }
