@@ -16,4 +16,10 @@ public class QueryFormatterTest {
         String formatted = QueryFormatter.format("some-thing");
         assertEquals("some\\-thing", formatted);
     }
+
+    @Test
+    public void should_escape_multiple_dashed() {
+        String formatted = QueryFormatter.format("some-thing-other");
+        assertEquals("some\\-thing\\-other", formatted);
+    }
 }
