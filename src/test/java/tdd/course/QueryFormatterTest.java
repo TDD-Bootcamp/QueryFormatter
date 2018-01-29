@@ -22,4 +22,10 @@ public class QueryFormatterTest {
         String formatted = QueryFormatter.format("some-thing-other");
         assertEquals("some\\-thing\\-other", formatted);
     }
+
+    @Test
+    public void should_not_change_escaped_dash() {
+        String formatted = QueryFormatter.format("some\\-thing");
+        assertEquals("some\\-thing", formatted);
+    }
 }
