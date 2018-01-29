@@ -28,4 +28,10 @@ public class QueryFormatterTest {
         String formatted = QueryFormatter.format("some\\-thing");
         assertEquals("some\\-thing", formatted);
     }
+
+    @Test
+    public void should_not_change_quoted_dash() {
+        String formatted = QueryFormatter.format("\"some-thing\"");
+        assertEquals("\"some-thing\"", formatted);
+    }
 }
